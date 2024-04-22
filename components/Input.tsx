@@ -11,7 +11,7 @@ export default function Input ({name, errors = [], ...rest} : IInputProps & Inpu
         <div>
             <input
                 name={name} 
-                className="bg-transparent rounded-md w-full h-10 p-2 m-2 focus:outline-none ring-2 focus:ring-4 transition ring-neutral-200 focus:ring-orange-500 border-none placeholder:text-neutral-400" 
+                className="bg-transparent rounded-md w-full h-10 p-2 m-3 focus:outline-none ring-2 focus:ring-4 transition ring-neutral-200 focus:bg-white focus:ring-orange-500 border-none placeholder:text-neutral-400" 
                 {...rest}
             />
             {errors &&

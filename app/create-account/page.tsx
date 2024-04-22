@@ -5,6 +5,7 @@ import { useFormState } from "react-dom";
 import { createAccount } from "./action";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
+import GithubLogin from "@/components/github-login";
 
 export default function CreateAccount() {
 
@@ -12,9 +13,9 @@ export default function CreateAccount() {
 
 
     return (
-        <div className="flex flex-col gap-2 bg-slate-50 py-8 px-5">
+        <div className="items-center justify-center p-6 mt-10 max-w-screen-sm">
             <h1 className="font-semibold font-sans text-3xl text-orange-600 text-center mb-10">Welcome!</h1>
-            <div className="flex align-middle justify-center">
+            <div className="flex flex-col align-middle justify-center mt-10">
                 <form action={userTrigger}>
                     <Input 
                         name="username"
