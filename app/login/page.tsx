@@ -5,7 +5,7 @@ import { useFormState } from "react-dom";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import LoginAction from "./action";
-import GithubLogin from "@/components/github-login";
+import GithubLogin from "@/components/Github-login";
 
 export default function CreateAccount() {
 
@@ -13,7 +13,7 @@ export default function CreateAccount() {
 
     return (
         <div className="items-center justify-center p-6 mt-10 max-w-screen-sm">
-        <h1 className="font-semibold font-sans text-3xl text-orange-400 text-center mb-10">Welcome!</h1>
+        <h1 className="font-semibold font-sans text-3xl text-orange-400 text-center mb-10">🥕 Login</h1>
         <div className="flex flex-col align-middle justify-center">
             <form action={loginTrigger}>
                 <Input 
@@ -30,7 +30,7 @@ export default function CreateAccount() {
                     placeholder="password"
                     errors={state?.fieldErrors?.password}
                 />
-                <Button text="Login" />
+                <Button text="Login"/>
             </form>
             <GithubLogin />
         </div>

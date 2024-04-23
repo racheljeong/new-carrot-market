@@ -19,9 +19,9 @@
     @apply w-full bg-orange-500 text-white  font-medium  rounded-md text-center hover:bg-orange-400 transition-colors;
   } */
    .primary-btn {
-    @apply w-full px-4 m-4 bg-white border-2 border-slate-500 rounded-md
+    @apply w-1/4 px-4 m-4 py-2 bg-amber-50 text-orange-400 text-center border-2 border-slate-500 font-semibold rounded-md
            disabled:bg-neutral-400 disabled:text-neutral-300 disabled:cursor-not-allowed
-           hover:bg-orange-400 transition-colors;
+           hover:bg-orange-400 hover:text-amber-50 transition-colors;
   } 
 
 

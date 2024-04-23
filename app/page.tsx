@@ -8,11 +8,11 @@ export default function Home() {
         <h1 className="text-4xl ">BRAND NEW CARROT WORLD</h1>
         <h2 className="text-2xl">Welcome!</h2>
       </div>
-      <div className="flex flex-col items-center gap-4 w-full">
-        <p>If you wanna join with us, please be our Member!</p>
-        <Link href="/create-account" className="border-2 border-slate-400 h-10 p-2 rounded-md hover:bg-orange-100">Be a member</Link>
+      <div className="flex flex-col items-center gap-1 w-full">
+        <p>Be our Member!</p>
+        <Link href="/create-account" className="primary-btn">Be a member</Link>
         <p>Are you already a member?</p>
-        <Link href="/login" className="border-2 border-slate-400 h-10 p-2 rounded-md hover:bg-orange-100">
+        <Link href="/login" className="primary-btn">
           Login
         </Link>
       </div>
