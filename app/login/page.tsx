@@ -12,9 +12,9 @@ export default function CreateAccount() {
     const [state, loginTrigger] = useFormState(LoginAction, null);
 
     return (
-        <div className="items-center justify-center p-6 mt-10 max-w-screen-sm">
-        <h1 className="font-semibold font-sans text-3xl text-orange-400 text-center mb-10">🥕 Login</h1>
-        <div className="flex flex-col align-middle justify-center">
+        <div className="flex flex-col items-center justify-center p-6 mt-10 max-w-screen-sm">
+            <h1 className="font-semibold font-sans text-3xl text-orange-600 text-center mb-10">🥕 Login</h1>
+            <div className="flex flex-col align-middle justify-center mt-10">
             <form action={loginTrigger}>
                 <Input 
                     name="email"

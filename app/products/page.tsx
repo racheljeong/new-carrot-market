@@ -11,7 +11,7 @@ async function getProducts() {
             createdAt : true, 
         }
     });
-    console.log(productList);
+    //console.log(productList);
     return productList;
 }
 

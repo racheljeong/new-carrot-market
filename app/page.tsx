@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-between min-h-screen p-6">
-      <div className="my-auto flex flex-col items-center gap-2 *:font-medium">
+    <div className="flex flex-col items-center justify-between p-3">
+      <div className="flex flex-col items-center py-4 gap-4 mb-12 *:font-medium">
         <span className="text-8xl gap-2 py-2 my-2">🥕</span>
         <h1 className="text-4xl ">BRAND NEW CARROT WORLD</h1>
         <h2 className="text-2xl">Welcome!</h2>

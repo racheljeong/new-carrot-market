@@ -10,7 +10,7 @@ export default function Button({text} : IButtonProps) {
     return(
         <button 
             disabled={pending}
-            className="w-full primary-btn h-10 mt-10"
+            className="w-72 primary-btn h-10 mt-7 mb-0"
         >
             {pending? "Submitting..." : text}
         </button>

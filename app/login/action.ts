@@ -36,36 +36,37 @@ export default async function LoginAction(prevData : any, data : FormData) {
         password : data.get("password"),
     }
 
-    const result = loginSchema.safeParse(loginData);
-    console.log(result);
+    const result = await loginSchema.safeParseAsync(loginData);
+    //console.log(result);
 
     if(!result.success){
         console.log(result.error.flatten());
         return result.error.flatten();
     } else {
-        console.log(result.data);
         //2. if user is founded, check hashed password
         const user = await db.user.findUnique({
             where : {
-                email : result.data.password
+                email : result.data.email
             },
             select : {
                 id : true,
                 password : true
             }
         });
-      
+     
         //3. if hashed password same with logined password
         const passwordChk = await bcrypt.compare(
-            result.data.password, user!.password!
+            result.data.password, 
+            user!.password ?? "1234lL!"
         );
+
         if(passwordChk){
             //4. let user loged in
             const session = await getSession();
             session.id = user!.id;
             await session.save();
             //5. redirect somewhere else
-            redirect("/")
+            redirect("/profile")
         } else {
             return {
                 //error 발생시 zod의 fieldError 처럼 만들어 보내기
@@ -75,16 +76,7 @@ export default async function LoginAction(prevData : any, data : FormData) {
                 }
             };
         }
-
-
-
-
-
-     
-      
-
-       
-        
+ 
 
     }
 

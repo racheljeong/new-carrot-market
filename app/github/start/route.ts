@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 
 
 export function GET() {
@@ -10,6 +11,6 @@ export function GET() {
 
     const formattedParams = new URLSearchParams(params).toString();
     const finalUrl = `${baseURL}?${formattedParams}`;
-    return Response.redirect(finalUrl);
+    return redirect(finalUrl);
 
 }

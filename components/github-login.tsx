@@ -5,7 +5,7 @@ export default function GithubLogin() {
   return (
     <>
         <Link
-          className="w-full primary-btn flex h-10 items-center justify-center gap-2"
+          className="w-72 primary-btn flex h-10 items-center justify-center gap-2"
           href="/github/start"
         >
           <svg

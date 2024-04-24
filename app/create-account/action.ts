@@ -126,20 +126,20 @@ export async function createAccount (prevData : any ,data : FormData) {
             data : {
                 username : result.data.username,
                 email : result.data.email,
-                password : result.data.password,
+                password : hashedPwd,
             },
             select : {
                 id : true,
             }
         });
-        console.log(createdUser);
+        //console.log(createdUser);
 
         //5. log the user in === give Cookie to user : session.ts
         const session = await getSession();
         session.id = createdUser.id;
         await session.save();
         //6. redirect to somewhere else
-        redirect("/profile");
+        redirect("/login");
     }
 }
 
