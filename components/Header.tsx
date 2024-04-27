@@ -1,4 +1,4 @@
-import { getUser } from "@/app/profile/action";
+
 import Link from "next/link";
 
 
@@ -9,9 +9,11 @@ export default async function Header() {
            {/* col1 */}
             <div className="flex align-middle">
             </div>
+            <Link href="/main">
             <div className="flex items-center justify-center">
                 <span className="text-3xl ml-10">🥕</span>
             </div>
+            </Link>
              {/* col2 */}
              <div className="flex align-middle">
                 <span className="flex align-middle relative">
