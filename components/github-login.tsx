@@ -1,4 +1,3 @@
-import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 
 export default function GithubLogin() {
@@ -19,17 +18,11 @@ export default function GithubLogin() {
               fill="currentColor"
               fillRule="evenodd"
               clipRule="evenodd"
-            ></path>
+              >
+            </path>
           </svg>
           <span>Continue with Github</span>
         </Link>
-        {/* <Link
-          className="primary-btn flex h-10 items-center justify-center gap-2"
-          href="/sms"
-        >
-          <ChatBubbleOvalLeftEllipsisIcon className="size-6" />
-          <span>Continue with SMS</span>
-        </Link> */}
       </>
   );
 }

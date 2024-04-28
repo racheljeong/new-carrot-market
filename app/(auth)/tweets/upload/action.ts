@@ -46,7 +46,7 @@ export default async function createTweet(_: any, formData : FormData) {
 
     
     // 저장할 디렉토리 설정 및 파일 저장
-    const savePath = path.join(process.cwd(), "public", "uploads", photoFile.name);
+    const savePath = path.join(process.cwd(), "public", "upload", photoFile.name);
     await fs.writeFile(savePath, Buffer.from(await photoBlob.arrayBuffer())); 
     data.photo = fileName;
     console.log(`photoFile.name`,photoFile.name);

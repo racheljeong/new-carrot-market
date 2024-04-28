@@ -21,9 +21,7 @@ interface TweetProps {
 
 export default function TweetList({id,title,photo,contents,tag,view,createdAt} : TweetProps) {
     const formattedDate = new Date(createdAt).toISOString().split("T")[0].replace(/-/g, " ");
-    //const formattedDate = new Date(user!.createdAt).toISOString().split['T'][0];
-    //console.log(formattedDate);
-
+   
     return (
         <div className="flex flex-row gap-5 border-2 border-slate-300 m-2 p-2 rounded-md
                         last:border-b-0">

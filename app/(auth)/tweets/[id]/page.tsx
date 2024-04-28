@@ -5,6 +5,8 @@ import getSession from "@/lib/session";
 import { unstable_cache as nextCache, revalidateTag } from "next/cache";
 import { notFound } from "next/navigation";
 import HeartBtn from "@/components/HeartBtn";
+import { EyeIcon } from "@heroicons/react/24/outline";
+
 
 async function getWriterChk (userId : number) {
     const session = await getSession();
@@ -25,7 +27,7 @@ async function getTweet(id : number) {
                 contents : true,
                 createdAt : true,
                 photo : true,
-    },
+            },
         });
         return tweet;
     } catch(e) {
@@ -86,7 +88,7 @@ async function getLikeStatus(tweetId : number) {
         isLiked : Boolean(isLiked),
     }
 }
-function getCachedLikeStatus(tweetId: number) {
+export function getCachedLikeStatus(tweetId: number) {
     const cachedOperation = nextCache(getLikeStatus, ["tweet-like-status"], {
       tags: [`like-status-${tweetId}`],
     });
@@ -111,11 +113,13 @@ export default async function TweetDetail({
 
     const { likeCnt, isLiked } = await getCachedLikeStatus(id);
     const tweetDetails = await getTweet(id);
+    const formattedDate = new Date(post.createdAt).toISOString().split("T")[0].replace(/-/g, " ");
+    
     console.log(`tweetDetails`,tweetDetails);
 
 
     return (
-        <div className="flex flex-col items-center justify-center p-2 py-5 m-4 my-5 max-w-screen-sm">
+        <div className="flex flex-col items-center justify-between p-3">
           <div className="p-5 flex flex-col gap-5">
             {post.photo ? 
                 <img src={post.photo} alt=""/> 
@@ -126,14 +130,15 @@ export default async function TweetDetail({
                 </svg>  
             }
             </div>
-        <h1 className="text-4xl font-semibold m-3 p-1">{post.title}</h1>
-        <span className="text-md font-semibold m-2 p-1">{post.user.username}</span>
-        <div className="flex items-center gap-2 text-neutral-400 text-sm">
-            <span>View : {post.view}</span>
-            <HeartBtn isLiked={isLiked} likeCount={likeCnt} postId={id} />
+        <h1 className="text-4xl font-semibold m-3 p-2">{post.title}</h1>
+        <div className="w-full justify-end flex flex-row gap-4 m-2 p-2 text-neutral-400 text-sm">
+            <span className="justify-center text-center"><EyeIcon className="size-7"/>{post.view}</span>
+            <span><HeartBtn isLiked={isLiked} likeCount={likeCnt} postId={id} /></span>
         </div>
-        <p className="bg-slate-100 w-full p-4 rounded-md m-5">{post.contents}</p>
-        
+        <p className="bg-slate-50 w-full p-4 rounded-md m-5 text-lg font-sans">{post.contents}
+        <span className="flex text-md justify-end right-2 ml-auto font-semibold m-2 p-1">{post.user.username}</span>
+            <span className="flex justify-end font-sans text-sm text-slate-500">{formattedDate}</span>
+        </p>
         </div>
         )
 }

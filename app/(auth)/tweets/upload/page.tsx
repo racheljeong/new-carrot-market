@@ -26,10 +26,13 @@ export default function Upload() {
 
 
     return (
-        <div className="flex flex-col items-center justify-center p-2 py-5 m-4 my-5 max-w-screen-sm">
+        // <div className="flex flex-col items-center justify-center p-2 py-5 m-4 my-5 max-w-screen-sm">
+          <div className="flex flex-col items-center justify-between p-3">
           <form action={trigger} className="p-5 flex flex-col gap-5">
             <label htmlFor="photo" 
-                    className="size-72 border-2 aspect-square rounded-full flex items-center justify-center flex-col text-neutral-300 border-neutral-300 border-dashed cursor-pointer bg-center bg-cover"
+                   className="size-72 border-2 aspect-square rounded-full flex 
+                              items-center justify-center flex-col text-neutral-300
+                               border-neutral-300 border-dashed cursor-pointer bg-center bg-cover"
                    style={{
                       backgroundImage: `url(${preview})`,
 
