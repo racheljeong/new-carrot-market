@@ -46,6 +46,7 @@ export default function CreateAccount() {
                     />
                     <Button text="Created Account" />
                 </form>
+                <GithubLogin />
             </div>
         </div>
 

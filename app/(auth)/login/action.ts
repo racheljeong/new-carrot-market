@@ -66,7 +66,7 @@ export default async function LoginAction(prevData : any, data : FormData) {
             session.id = user!.id;
             await session.save();
             //5. redirect somewhere else
-            redirect("/profile")
+            redirect("/main")
         } else {
             return {
                 //error 발생시 zod의 fieldError 처럼 만들어 보내기

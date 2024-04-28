@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
       session.id = user.id;
       await session.save();
 
-      return redirect("/profile");
+      return redirect("/main");
     }
 
     //깃헙 계정 생성 : 이미 동일 이름 있을 경우 처리 필요
@@ -76,6 +76,6 @@ export async function GET(request: NextRequest) {
     const session = await getSession();
     session.id = newUser.id;
     await session.save();
-    return redirect("/profile");
+    return redirect("/main");
 
 }
